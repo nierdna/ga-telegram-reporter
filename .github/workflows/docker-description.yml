@@ -1,0 +1,23 @@
+name: Update Docker Hub Description
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'README-DOCKERHUB.md'
+
+jobs:
+  update-dockerhub-description:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update Docker Hub Description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/ga-telegram-reporter
+          short-description: "GA Telegram Reporter - Tự động gửi báo cáo Google Analytics 4 qua Telegram"
+          readme-filepath: ./README-DOCKERHUB.md 

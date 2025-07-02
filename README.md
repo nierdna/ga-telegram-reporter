@@ -70,6 +70,25 @@ docker run -d \
 
 Thay `/path/to/your/service-account.json` bằng đường dẫn đầy đủ đến file service account key của bạn.
 
+#### Phương pháp 2: Sử dụng Docker với biến môi trường qua command
+
+```bash
+docker run -d \
+  --name ga-telegram-reporter \
+  --restart unless-stopped \
+  -v /path/to/service-account.json:/path/to/service-account.json \
+  -e GA4_PROPERTY_ID=your_property_id \
+  -e GA4_SERVICE_ACCOUNT_KEY_PATH=/path/to/service-account.json \
+  -e GA4_WEBSITE_URL=example.com \
+  -e TELEGRAM_BOT_TOKEN=your_bot_token \
+  -e TELEGRAM_CHAT_ID=your_chat_id \
+  -e CRON_SCHEDULE="0 8 * * *" \
+  -e TZ=Asia/Ho_Chi_Minh \
+  your-docker-username/ga-telegram-reporter:latest
+```
+
+Với cách này, bạn không cần tạo file .env vì tất cả các biến môi trường được truyền trực tiếp qua cờ `-e`.
+
 ### 3. Kiểm tra logs
 
 ```bash
@@ -78,7 +97,7 @@ docker logs ga-telegram-reporter
 
 ### 4. Tùy chỉnh
 
-Bạn có thể điều chỉnh các cài đặt sau trong file `.env`:
+Bạn có thể điều chỉnh các cài đặt sau trong file `.env` hoặc qua biến môi trường:
 
 - **GA4_WEBSITE_URL**: URL của website (mặc định: example.com)
 - **CRON_SCHEDULE**: Lịch gửi báo cáo (mặc định: 0 8 * * * - 8 giờ sáng hàng ngày)
