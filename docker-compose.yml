@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  ga-telegram-reporter:
+    build: .
+    container_name: ga-telegram-reporter
+    volumes:
+      - ./credentials:/app/credentials
+      - ./.env:/app/.env
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Ho_Chi_Minh 
