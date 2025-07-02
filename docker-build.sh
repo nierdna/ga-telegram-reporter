@@ -3,7 +3,7 @@
 # Cấu hình
 IMAGE_NAME="ga-telegram-reporter"
 VERSION="1.0.0"
-DOCKER_USERNAME="your-docker-username"  # Thay đổi thành username Docker của bạn
+DOCKER_USERNAME="nierdna"  # Thay đổi thành username Docker của bạn
 
 # Build image
 echo "Building Docker image: $IMAGE_NAME:$VERSION"

@@ -22,7 +22,7 @@ docker run -d \
   -e TELEGRAM_CHAT_ID=your_chat_id \
   -e CRON_SCHEDULE="0 8 * * *" \
   -e TZ=Asia/Ho_Chi_Minh \
-  your-docker-username/ga-telegram-reporter:latest
+  nierdna/ga-telegram-reporter:latest
 ```
 
 ## Chuẩn bị
@@ -55,7 +55,7 @@ docker run -d \
   -v /path/to/service-account.json:/path/to/service-account.json \
   -v $(pwd)/.env:/app/.env \
   -e TZ=Asia/Ho_Chi_Minh \
-  your-docker-username/ga-telegram-reporter:latest
+  nierdna/ga-telegram-reporter:latest
 ```
 
 ## Biến môi trường

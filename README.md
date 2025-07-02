@@ -65,7 +65,7 @@ docker run -d \
   -v /path/to/your/service-account.json:/path/to/your/service-account.json \
   -v $(pwd)/.env:/app/.env \
   -e TZ=Asia/Ho_Chi_Minh \
-  your-docker-username/ga-telegram-reporter:latest
+  nierdna/ga-telegram-reporter:latest
 ```
 
 Thay `/path/to/your/service-account.json` bằng đường dẫn đầy đủ đến file service account key của bạn.
@@ -84,7 +84,7 @@ docker run -d \
   -e TELEGRAM_CHAT_ID=your_chat_id \
   -e CRON_SCHEDULE="0 8 * * *" \
   -e TZ=Asia/Ho_Chi_Minh \
-  your-docker-username/ga-telegram-reporter:latest
+  nierdna/ga-telegram-reporter:latest
 ```
 
 Với cách này, bạn không cần tạo file .env vì tất cả các biến môi trường được truyền trực tiếp qua cờ `-e`.
