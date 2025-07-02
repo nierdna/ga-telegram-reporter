@@ -75,4 +75,4 @@ docker logs ga-telegram-reporter
 
 ## Nguồn và hỗ trợ
 
-Tìm hiểu thêm và đóng góp tại [GitHub Repository](https://github.com/your-username/ga-telegram-reporter). 
+Tìm hiểu thêm và đóng góp tại [GitHub Repository](https://github.com/nierdna/ga-telegram-reporter). 
