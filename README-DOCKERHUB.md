@@ -14,12 +14,14 @@
 docker run -d \
   --name ga-telegram-reporter \
   --restart unless-stopped \
-  -v /path/to/service-account.json:/path/to/service-account.json \
+  -v /path/to/service-account.json:/app/service-account.json \
   -e GA4_PROPERTY_ID=your_property_id \
-  -e GA4_SERVICE_ACCOUNT_KEY_PATH=/path/to/service-account.json \
+  -e GA4_SERVICE_ACCOUNT_KEY_PATH=/app/service-account.json \
   -e GA4_WEBSITE_URL=example.com \
   -e TELEGRAM_BOT_TOKEN=your_bot_token \
   -e TELEGRAM_CHAT_ID=your_chat_id \
+  -e USE_PROXY=true \
+  -e SOCKS5_PROXY_URL=socks5://your_proxy_host:your_proxy_port \
   -e CRON_SCHEDULE="0 8 * * *" \
   -e TZ=Asia/Ho_Chi_Minh \
   nierdna/ga-telegram-reporter:latest
